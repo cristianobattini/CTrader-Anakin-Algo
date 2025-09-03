@@ -71,13 +71,14 @@ namespace cAlgo.Robots
             var result = PlaceLimitOrder(
                 OrderType,
                 Symbol.Name,
-                volume,
+                Symbol.NormalizeVolumeInUnits(volume),
                 EntryPrice,
                 label,
                 stopLossPrice,   
                 takeProfitPrice, 
                 null,
-                Server.Time.AddHours(OrderExpirationHours),
+                // Server.Time.AddHours(OrderExpirationHours),
+                null,
                 $"TP: {takeProfitPrice:F5}, SL: {stopLossPrice:F5}"
             );
             
