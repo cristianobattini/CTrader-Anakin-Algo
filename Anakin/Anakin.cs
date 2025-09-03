@@ -77,7 +77,7 @@ namespace cAlgo.Robots
                 stopLossPrice,   
                 takeProfitPrice, 
                 null,
-                DateTime.Now.AddHours(OrderExpirationHours),
+                Server.Time.AddHours(OrderExpirationHours),
                 $"TP: {takeProfitPrice:F5}, SL: {stopLossPrice:F5}"
             );
             

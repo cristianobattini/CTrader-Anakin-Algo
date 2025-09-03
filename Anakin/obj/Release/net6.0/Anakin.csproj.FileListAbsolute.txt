@@ -1,0 +1,11 @@
+C:\Users\crist\Documents\cAlgo\Sources\Robots\Anakin-cAlgo\Anakin\bin\Release\net6.0\Anakin.deps.json
+C:\Users\crist\Documents\cAlgo\Sources\Robots\Anakin-cAlgo\Anakin\bin\Release\net6.0\Anakin.dll
+C:\Users\crist\Documents\cAlgo\Sources\Robots\Anakin-cAlgo\Anakin\bin\Release\net6.0\ref\Anakin.dll
+C:\Users\crist\Documents\cAlgo\Sources\Robots\Anakin-cAlgo\Anakin\bin\Release\net6.0\Anakin.pdb
+C:\Users\crist\Documents\cAlgo\Sources\Robots\Anakin-cAlgo\Anakin\obj\Release\net6.0\Anakin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\crist\Documents\cAlgo\Sources\Robots\Anakin-cAlgo\Anakin\obj\Release\net6.0\Anakin.AssemblyInfoInputs.cache
+C:\Users\crist\Documents\cAlgo\Sources\Robots\Anakin-cAlgo\Anakin\obj\Release\net6.0\Anakin.AssemblyInfo.cs
+C:\Users\crist\Documents\cAlgo\Sources\Robots\Anakin-cAlgo\Anakin\obj\Release\net6.0\Anakin.csproj.CoreCompileInputs.cache
+C:\Users\crist\Documents\cAlgo\Sources\Robots\Anakin-cAlgo\Anakin\obj\Release\net6.0\Anakin.dll
+C:\Users\crist\Documents\cAlgo\Sources\Robots\Anakin-cAlgo\Anakin\obj\Release\net6.0\ref\Anakin.dll
+C:\Users\crist\Documents\cAlgo\Sources\Robots\Anakin-cAlgo\Anakin\obj\Release\net6.0\Anakin.pdb

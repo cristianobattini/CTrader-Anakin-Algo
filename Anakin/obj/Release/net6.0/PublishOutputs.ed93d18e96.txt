@@ -1,0 +1,4 @@
+C:\Users\crist\Documents\cAlgo\Sources\Robots\Anakin-cAlgo\Anakin\bin\Release\net6.0\publish\Anakin.dll
+C:\Users\crist\Documents\cAlgo\Sources\Robots\Anakin-cAlgo\Anakin\bin\Release\net6.0\publish\Anakin.deps.json
+C:\Users\crist\Documents\cAlgo\Sources\Robots\Anakin-cAlgo\Anakin\bin\Release\net6.0\publish\Anakin.pdb
+C:\Users\crist\Documents\cAlgo\Sources\Robots\Anakin-cAlgo\Anakin\bin\Release\net6.0\publish\cAlgo.API.dll
