@@ -37,7 +37,7 @@ namespace cAlgo.Robots
 
         protected override void OnStart()
         {
-            Print("=== Anakin cBot Started ===");
+            Print("=== Anakin Started ===");
 
             Positions.Opened += OnPositionOpened;
             Positions.Closed += OnPositionClosed;
@@ -46,7 +46,7 @@ namespace cAlgo.Robots
             PrintParametersSummary();
             
             // Calculate volumes for each order
-            double totalVolume = CalculateVolumeInUnits(VolumePercent);
+            double totalVolume = CalculateVolume(VolumePercent);
             double volumeTP1 = totalVolume * (TP1WeightPercent / 100.0);
             double volumeTP2 = totalVolume * ((100 - TP1WeightPercent) / 100.0);
             
@@ -60,13 +60,13 @@ namespace cAlgo.Robots
             PrintProfitLossAnalysis(totalVolume, takeProfitPrice1, takeProfitPrice2, stopLossPrice);
             
             // Place the two pending orders
-            PlaceOrder(volumeTP1, takeProfitPrice1, stopLossPrice, "TP1 Order");
-            PlaceOrder(volumeTP2, takeProfitPrice2, stopLossPrice, "TP2 Order");
+            PlaceOrder(volumeTP1, TakeProfit1Pips, stopLossPrice, "TP1 Order");
+            PlaceOrder(volumeTP2, TakeProfit2Pips, stopLossPrice, "TP2 Order");
             
             Print("=== Orders Placed Successfully ===");
         }
 
-        private void PlaceOrder(double volume, double takeProfitPrice, double stopLossPrice, string label)
+        private void PlaceOrder(double volume, double takeProfitPips, double stopLossPips, string label)
         {
             var result = PlaceLimitOrder(
                 OrderType,
@@ -74,17 +74,17 @@ namespace cAlgo.Robots
                 Symbol.NormalizeVolumeInUnits(volume),
                 EntryPrice,
                 label,
-                stopLossPrice,   
-                takeProfitPrice, 
-                null,
+                stopLossPips,   
+                takeProfitPips, 
+                ProtectionType.Relative,
                 // Server.Time.AddHours(OrderExpirationHours),
                 null,
-                $"TP: {takeProfitPrice:F5}, SL: {stopLossPrice:F5}"
+                $"TP (pips): {takeProfitPips}, SL (pips): {stopLossPips}"
             );
             
             if (result.IsSuccessful)
             {
-                Print($"✅ {label} placed: Volume={volume:F2}, Entry={EntryPrice}, TP={takeProfitPrice:F5}, SL={stopLossPrice:F5}");
+                Print($"✅ {label} placed: Volume={volume:F2}, Entry={EntryPrice}, TP={takeProfitPips:F5}, SL={stopLossPips:F5}");
             }
             else
             {
@@ -92,7 +92,7 @@ namespace cAlgo.Robots
             }
         }
 
-        private double CalculateVolumeInUnits(double percent)
+        private double CalculateVolume(double percent)
         {
             double balance = Account.Balance;
             double riskAmount = balance * (percent / 100.0);
@@ -106,7 +106,6 @@ namespace cAlgo.Robots
             
             double volume = riskAmount / (StopLossPips * pipValue);
             
-            volume = Symbol.NormalizeVolumeInUnits(volume, RoundingMode.Down);
             return volume;
         }
 
@@ -175,7 +174,7 @@ namespace cAlgo.Robots
 
         protected override void OnStop()
         {
-            Print("=== Dual Take Profit cBot Stopped ===");
+            Print("=== Anakin Stopped ===");
         }
 
         protected override void OnError(Error error)
